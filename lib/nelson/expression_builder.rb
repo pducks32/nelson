@@ -21,6 +21,6 @@ module Nelson
     end
   end
 
-  autoload :MultipicationExpressionBuilder, "lib/expressions/multipication_expression_builder"
-  autoload :AdditionExpressionBuilder, "lib/expressions/addition_expression_builder"
+  autoload :MultipicationExpressionBuilder, "nelson/expression_builders/multipication_expression_builder"
+  autoload :AdditionExpressionBuilder, "nelson/expression_builders/addition_expression_builder"
 end

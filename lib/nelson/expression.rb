@@ -20,6 +20,6 @@ module Nelson
     end
   end
 
-  autoload :MultipicationExpression, "lib/expressions/multipication_expression"
-  autoload :AdditionExpression, "lib/expressions/addition_expression"
+  autoload :MultipicationExpression, "nelson/expressions/multipication_expression"
+  autoload :AdditionExpression, "nelson/expressions/addition_expression"
 end
