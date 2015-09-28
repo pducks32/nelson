@@ -1,11 +1,13 @@
-require 'spec_helper'
+require "spec_helper"
 
-describe Nelson do
-  it 'has a version number' do
-    expect(Nelson::VERSION).not_to be nil
-  end
+module Nelson
+  RSpec.describe Nelson do
+    it 'has a version number' do
+      expect(Nelson::VERSION).not_to be nil
+    end
 
-  it 'does something useful' do
-    expect(false).to eq(true)
+    it "includes DSL by default" do
+      is_expected.to be_a_kind_of DSL
+    end
   end
 end
