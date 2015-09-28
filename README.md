@@ -1,5 +1,6 @@
 # Nelson
 [![Gem Version](https://badge.fury.io/rb/nelson.svg)](http://badge.fury.io/rb/nelson)
+[![Build Status](https://travis-ci.org/pducks32/nelson.svg)](https://travis-ci.org/pducks32/nelson)
 
 A library for building, manipulating, displaying, and solving math expressions using a fluent API.
 
