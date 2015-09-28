@@ -1,4 +1,5 @@
 # Nelson
+[![Gem Version](https://badge.fury.io/rb/nelson.svg)](http://badge.fury.io/rb/nelson)
 
 A library for building, manipulating, displaying, and soling math expressions using a fluent API.
 
