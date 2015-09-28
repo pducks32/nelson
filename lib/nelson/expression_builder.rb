@@ -4,6 +4,7 @@ module Nelson
     attr_accessor :terms
 
     def initialize(*terms)
+      raise ArgumentError, "At least 1 term must be specified" unless terms.length > 0
       @terms = terms
     end
 
