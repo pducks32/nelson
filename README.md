@@ -20,7 +20,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+expression = Nelson.product_of(6).and(5).square.build
+expression.to_s #=> (6*5)^2
+expression.evaluate #=> 900
+```
 
 ## Development
 
