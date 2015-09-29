@@ -77,22 +77,22 @@ module Nelson
       end
     end
 
-    describe "#-" do
-      subject { MultipicationExpression.new(3, 4) }
+    describe "#/" do
+      subject { AdditionExpression.new(3, 4) }
 
       context "when other value is a term" do
-        let(:other) { MultipicationExpression.new(5, 6) }
+        let(:other) { AdditionExpression.new(5, 6) }
 
-        it "evaluates the term before adding it to expression" do
-          expect(subject - other).to eq -18
+        it "evaluates the term before dividing the expression by it" do
+          expect(subject / other).to eq Rational(7, 11)
         end
       end
 
       context "when other value is not a term" do
-        let(:other) { 30 }
+        let(:other) { 11 }
 
-        it "adds the values together" do
-          expect(subject - other).to eq -18
+        it "divides the values" do
+          expect(subject / other).to eq Rational(7, 11)
         end
       end
     end
