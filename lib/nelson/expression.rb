@@ -20,6 +20,12 @@ module Nelson
       AdditionExpression.new(rhs_value, lhs_value).call
     end
 
+    def -(term)
+      rhs_value = self.call
+      lhs_value = try_to_eval term
+      SubtractionExpression.new(rhs_value, lhs_value).call
+    end
+
     private
 
     def try_to_eval(term)
@@ -29,4 +35,5 @@ module Nelson
 
   autoload :MultipicationExpression, "nelson/expressions/multipication_expression"
   autoload :AdditionExpression, "nelson/expressions/addition_expression"
+  autoload :SubtractionExpression, "nelson/expressions/subtraction_expression"
 end
