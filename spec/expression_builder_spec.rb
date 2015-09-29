@@ -28,6 +28,19 @@ module Nelson
       end
     end
 
+    describe "#divided_by" do
+      subject { ExpressionBuilder.new(3, 4) }
+
+      it "builds a new DivisionExpressionBuilder" do
+        expect(subject.divided_by(4)).to be_a DivisionExpressionBuilder
+      end
+
+      it "adds itself and the passed argument to the new builder" do
+        builder = ExpressionBuilder.new(3, 4)
+        expect(subject.divided_by(4).terms).to include subject, 4
+      end
+    end
+
     describe "#plus" do
       it "builds a new AdditionExpressionBuilder" do
         builder = ExpressionBuilder.new(3, 4)
