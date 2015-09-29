@@ -10,6 +10,11 @@ module Nelson
     def sum_of(*terms)
       AdditionExpressionBuilder.new(*terms)
     end
+
+    def quotient_of(*terms)
+      DivisionExpressionBuilder.new(*terms)
+    end
+
     def difference_of(*terms)
       SubtractionExpressionBuilder.new(*terms)
     end
