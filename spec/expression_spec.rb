@@ -56,5 +56,25 @@ module Nelson
         end
       end
     end
+
+    describe "#-" do
+      subject { MultipicationExpression.new(3, 4) }
+
+      context "when other value is a term" do
+        let(:other) { MultipicationExpression.new(5, 6) }
+
+        it "evaluates the term before adding it to expression" do
+          expect(subject - other).to eq -18
+        end
+      end
+
+      context "when other value is not a term" do
+        let(:other) { 30 }
+
+        it "adds the values together" do
+          expect(subject - other).to eq -18
+        end
+      end
+    end
   end
 end
