@@ -39,5 +39,17 @@ module Nelson
         expect(builder.plus(4).terms).to include builder, 4
       end
     end
+
+    describe "#minus" do
+      it "builds a new SubtractionExpressionBuilder" do
+        builder = ExpressionBuilder.new(3, 4)
+        expect(builder.minus(4)).to be_a AdditionExpressionBuilder
+      end
+
+      it "adds itself and the passed argument to the new builder" do
+        builder = ExpressionBuilder.new(3, 4)
+        expect(builder.minus(4).terms).to include builder, 4
+      end
+    end
   end
 end
