@@ -10,5 +10,9 @@ module Nelson
     def sum_of(*terms)
       AdditionExpressionBuilder.new(*terms)
     end
+    def difference_of(*terms)
+      SubtractionExpressionBuilder.new(*terms)
+    end
+    alias :difference_between :difference_of
   end
 end
