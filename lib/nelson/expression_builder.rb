@@ -28,5 +28,5 @@ module Nelson
 
   autoload :MultipicationExpressionBuilder, "nelson/expression_builders/multipication_expression_builder"
   autoload :AdditionExpressionBuilder, "nelson/expression_builders/addition_expression_builder"
-  autoload :SubtractionExpressionBuilder, "nelson/expressions/subtraction_expression_builder"
+  autoload :SubtractionExpressionBuilder, "nelson/expression_builders/subtraction_expression_builder"
 end

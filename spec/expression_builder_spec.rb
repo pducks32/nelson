@@ -43,7 +43,7 @@ module Nelson
     describe "#minus" do
       it "builds a new SubtractionExpressionBuilder" do
         builder = ExpressionBuilder.new(3, 4)
-        expect(builder.minus(4)).to be_a AdditionExpressionBuilder
+        expect(builder.minus(4)).to be_a SubtractionExpressionBuilder
       end
 
       it "adds itself and the passed argument to the new builder" do
