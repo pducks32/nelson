@@ -23,7 +23,7 @@ module Nelson
       context "when other value is a term" do
         let(:other) { MultipicationExpression.new(5, 6) }
 
-        it "evaluates the term before adding it to expression" do
+        it "evaluates the term before adding it to the expression" do
           expect(subject + other).to eq 42
         end
       end
@@ -43,7 +43,7 @@ module Nelson
       context "when other value is a term" do
         let(:other) { AdditionExpression.new(5, 6) }
 
-        it "evaluates the term before adding it to expression" do
+        it "evaluates the term before multipling it to the expression" do
           expect(subject * other).to eq 77
         end
       end
@@ -51,7 +51,7 @@ module Nelson
       context "when other value is not a term" do
         let(:other) { 11 }
 
-        it "adds the values together" do
+        it "multiplies the values together" do
           expect(subject * other).to eq 77
         end
       end
