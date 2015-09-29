@@ -36,5 +36,25 @@ module Nelson
         end
       end
     end
+
+    describe "#*" do
+      subject { AdditionExpression.new(3, 4) }
+
+      context "when other value is a term" do
+        let(:other) { AdditionExpression.new(5, 6) }
+
+        it "evaluates the term before adding it to expression" do
+          expect(subject * other).to eq 77
+        end
+      end
+
+      context "when other value is not a term" do
+        let(:other) { 11 }
+
+        it "adds the values together" do
+          expect(subject * other).to eq 77
+        end
+      end
+    end
   end
 end
