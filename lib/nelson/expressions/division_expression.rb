@@ -2,11 +2,11 @@
 module Nelson
   class DivisionExpression < Expression
     def initialize(term1, term2)
-      super(term1.to_f, term2.to_f)
+      super(term1, term2)
     end
 
     def call
-      terms.reduce(:/)
+      terms.map { |n| n.is_a?(Numeric) ? n.to_f : n }.reduce(:/)
     end
 
     def to_s
