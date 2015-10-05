@@ -4,10 +4,9 @@ module Nelson
     def initialize(term1, term2)
       super(term1, term2)
     end
-    
+
     def build
-      terms.map! { |e| e.is_a?(ExpressionBuilder) ? e.build : e }
-      DivisionExpression.new(*terms)
+      DivisionExpression.new(*built_terms)
     end
   end
 end

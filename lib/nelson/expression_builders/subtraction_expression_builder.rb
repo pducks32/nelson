@@ -2,8 +2,7 @@
 module Nelson
   class SubtractionExpressionBuilder < ExpressionBuilder
     def build
-      terms.map! { |e| e.is_a?(ExpressionBuilder) ? e.build : e }
-      SubtractionExpression.new(*terms)
+      SubtractionExpression.new(*built_terms)
     end
   end
 end

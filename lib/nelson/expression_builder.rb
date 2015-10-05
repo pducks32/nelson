@@ -28,6 +28,10 @@ module Nelson
     def divided_by(term)
       DivisionExpressionBuilder.new(self, term)
     end
+
+    def built_terms
+      terms.map { |e| e.is_a?(ExpressionBuilder) ? e.build : e }
+    end
   end
 
   autoload :MultipicationExpressionBuilder, "nelson/expression_builders/multipication_expression_builder"
