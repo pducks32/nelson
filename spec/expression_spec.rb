@@ -96,5 +96,32 @@ module Nelson
         end
       end
     end
+
+    describe "outputters" do
+      subject { Nelson.product_of(6).and(4).plus(16).build }
+
+      describe "#call" do
+        it "evaluates the expresson" do
+          expect(subject.call).to eq 40
+        end
+      end
+
+      describe "#to_s" do
+        context "when multipling two terms" do
+          subject { Nelson.product_of(6).and(4).times(11).build }
+          it "doesn't use a * sign" do
+            expect(subject.to_s).to eq "11(6*4)"
+          end
+
+          it "puts the alone term at the beginning" do
+            expect(subject.to_s).to eq "11(6*4)"
+          end
+        end
+
+        it "renders a string of the expression" do
+          expect(subject.to_s).to eq "(6*4)+16"
+        end
+      end
+    end
   end
 end
