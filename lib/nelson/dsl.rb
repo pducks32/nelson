@@ -1,8 +1,7 @@
 
 module Nelson
   module DSL
-    module_function
-
+    extend self
     def product_of(*terms)
       MultipicationExpressionBuilder.new(*terms)
     end
