@@ -7,13 +7,32 @@ module Nelson
         subject { Expression.new(3, 4) }
         it { is_expected.to be_a Expression }
 
-        it "sets the terms passed" do
-          expect(subject.terms).to include 3, 4
+        context "that are not Terms" do
+          it "coerces them to terms" do
+            expect(Expression.new(3, 4).terms).to all( be_a Term )
+          end
         end
       end
 
       context "when passed no arguments" do
         it { expect { Expression.new }.to raise_error ArgumentError }
+      end
+    end
+
+    describe "#terms" do
+      subject { Expression.new(3, 4).terms.map(&:raw_value) }
+      it { is_expected.to include(4) & include(3) }
+    end
+
+    describe "#has_term?" do
+      let(:expression) { Expression.new(3, 4) }
+      context "when it does not have the term" do
+        subject { expression.has_term? Term(8) }
+        it { is_expected.to be false }
+      end
+      context "when it does have the term" do
+        subject { expression.has_term? Term(3) }
+        it { is_expected.to be true }
       end
     end
 
