@@ -5,7 +5,7 @@ module Nelson
 
     def initialize(*terms)
       raise ArgumentError, "At least 1 term must be specified" unless terms.length > 0
-      @terms = terms
+      @terms = terms.map { |t| Term(t) }
     end
 
     def *(term)
@@ -32,10 +32,14 @@ module Nelson
       DivisionExpression.new(rhs_value, lhs_value).call
     end
 
+    def has_term?(term)
+      terms.include?(term)
+    end
+
     private
 
     def try_to_eval(term)
-      term.respond_to?(:call) ? term.call : term
+      term.respond_to?(:call) ? term.call : Term(term)
     end
   end
 
